@@ -3,7 +3,6 @@ using System.IO;
 using System.Threading.Tasks;
 using LiteDB;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Moq;
 using SubAndPub.Commons.DAL.DbContexts;
 using SubAndPub.Commons.DAL.Models;
