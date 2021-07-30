@@ -28,7 +28,7 @@ namespace Subscriber
                     b.SetMinimumLevel(LogLevel.Debug);
                 })
                 .AddOptions<DbConnectionSettings>().Bind(configuration.GetSection(nameof(DbConnectionSettings)))
-                .Services.AddSingleton<MessageDbContext>()
+                .Services.AddSingleton<IMessageDbContext, MessageDbContext>()
                 .AddTransient<IMessageService, MessageService>()
                 .AddSingleton<ITransportService, TransportService>()
                 .AddScoped<ISubscriberManager, SubscriberManager>()
