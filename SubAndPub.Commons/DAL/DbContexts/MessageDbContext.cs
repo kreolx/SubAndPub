@@ -10,9 +10,9 @@ namespace SubAndPub.Commons.DAL.DbContexts
         private readonly LiteDatabase _db;
         public ILiteCollection<Message> Messages => _db.GetCollection<Message>();
         
-        public MessageDbContext(IOptions<DbConnectionSettings> _options)
+        public MessageDbContext(IOptions<DbConnectionSettings> options)
         {
-            var dbConnectionSettings = _options.Value;
+            var dbConnectionSettings = options.Value;
             _db = new LiteDatabase(dbConnectionSettings.ConnectionString);
         }
         
